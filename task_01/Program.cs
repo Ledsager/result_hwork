@@ -51,15 +51,12 @@ string[] ArrayShort(string[] array)
 return arrayshort;
 }
 
-Console.Write("Введите длинну массива:");
-int lengtharray = int.Parse(Console.ReadLine());
+Console.Write("Введите длинну массива :");
+int lengtharray;
+while (!int.TryParse(Console.ReadLine(), out lengtharray))//проверка что вводится число
+        Console.Write("Неверный ввод! \nВведите значение снова : ");
 string[] array = new string[lengtharray];
 InputMas(array);
-/*
- string[] arraymodification = array;
-arraymodification = arraymodification.Where(e => e.Length <= 3).ToArray();
-Console.WriteLine(String.Join(",", arraymodification));
-*/
 Console.WriteLine("Элементы нового массива:");
 PrintArray(ArrayShort(array));
 
