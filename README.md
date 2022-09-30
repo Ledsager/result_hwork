@@ -19,7 +19,8 @@
 - дублируем массив , чтобы не потерять изначальный
 - фильтруем последовательность значений на основе предиката и удаляем все элементы не удовлетворяющие нашему условию.
 
-$＞ string[] arraymodification = array;  
+```
+string[] arraymodification = array;
 arraymodification = arraymodification.Where(e => e.Length <= 3).ToArray();
 Console.WriteLine(String.Join(",", arraymodification));
-$＞
+```
