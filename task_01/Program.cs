@@ -4,13 +4,16 @@
 // либо задать на старте выполнения алгоритма. При решении не рекомендуется 
 // пользоваться коллекциями, лучше обойтись исключительно массивами.
 
-// Метод вывода массива на экран
+// Метод вывода елементов массива на экран в кавычках через запятую
 void PrintArray(string[] array)
 {
+    string separator = String.Empty;
     for (int i = 0; i < array.Length; i++)
     {
-        Console.WriteLine("{0}-й элемент (строка): {1}", i + 1, array[i]);
-        Console.WriteLine();
+        //Console.WriteLine("{0}-й элемент (строка): {1},", i + 1, array[i]); // вывод каждого элемента с нумерацией на новой строке
+        Console.Write(separator);
+        Console.Write($"'{array[i]}'");
+        separator = ",";
     }
 }
 
@@ -48,13 +51,13 @@ string[] ArrayShort(string[] array)
             arrayshort[j] = array[i];
             j++;
         }
-return arrayshort;
+    return arrayshort;
 }
 
 Console.Write("Введите длинну массива :");
 int lengtharray;
 while (!int.TryParse(Console.ReadLine(), out lengtharray))//проверка что вводится число
-        Console.Write("Неверный ввод! \nВведите значение снова : ");
+    Console.Write("Неверный ввод! \nВведите значение снова : ");
 string[] array = new string[lengtharray];
 InputMas(array);
 Console.WriteLine("Элементы нового массива:");
